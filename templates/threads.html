@@ -1,0 +1,16 @@
+
+<h3> shit threads</h3>
+<form>
+	<input type='text' ng-model='thread.name' placeholder='New Threads'/>
+	<input type='text' ng-model='thread.creator' placeholder='your name'/>
+	<button ng-click='addThread()'>add thread</button>
+	
+</form>
+<ul>
+  <li ng-repeat='thread in threads'>
+    <a ui-sref='thread({threadId: thread.$id})' >{{thread.name}} by: {{thread.creator}}</a>
+
+  </li>
+
+
+</ul>
