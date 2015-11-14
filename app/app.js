@@ -6,7 +6,7 @@ angular.module('myApp', ['firebase','ui.router'])
 
 
    .config(function($urlRouterProvider, $stateProvider){
-       $urlRouterProvider.otherwise('/threads');
+       $urlRouterProvider.otherwise('/login');
        $stateProvider
           .state('threads', {
           	url: '/threads',
@@ -29,6 +29,32 @@ angular.module('myApp', ['firebase','ui.router'])
           		commentData: function(threadServ, $stateParams){
           			return threadServ.getComments($stateParams.threadId);
           		}
-          }
-   });
+            }
+          })
+
+   
+          .state('login', {
+            url: '/login',
+            templateUrl: 'templates/login.html',
+            controller: 'loginCtrl'
+          })
+          .state('logout',{
+            url:'/logout',
+            controller: function(userService){
+              return userService.logoutUser();
+            }
+          })
+
+
+
+
+          .state('signup', {
+            url: '/signup',
+            templateUrl: 'templates/signup.html',
+            controller: 'signupCtrl'
+          })
+
+
+     
+
  });

@@ -1,9 +1,10 @@
+<button ui-sref='logout'> log out </button>
 <h1>{{thread.name}}</h1>
 <p>{{thread.creator}}</p>
 <form>
 	<input type="text" placeholder="username" ng-model='newComment.username'>
 	<input type="text" placeholder="comment" ng-model='newComment.comment'>
-	<button ng-click='addComment'>sendit</button>
+	<button ng-click='addComment()'>sendit</button>
 </form>
 <ul>
 <li ng-repeat='comment in comments'>

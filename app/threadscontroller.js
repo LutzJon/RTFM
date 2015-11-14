@@ -1,5 +1,9 @@
-angular.module('myApp').controller('threadsCtrl', function($scope, $firebaseArray, threadsData) {
-
+angular.module('myApp').controller('threadsCtrl', function($scope, $firebaseArray, threadsData, userService, $state) {
+	if(!userService.getUser()){
+		console.log('thesese')
+		$state.go('login')
+	}
+	
 $scope.threads = $firebaseArray(threadsData);
 $scope.addThread = function(){
 	newThreadObj = {
