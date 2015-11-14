@@ -27,7 +27,7 @@ angular.module('myApp', ['firebase','ui.router'])
           			return threadServ.getThread($stateParams.threadId);
           		},
           		commentData: function(threadServ, $stateParams){
-          			return threadServ.getCommnets($stateParams.threadId);
+          			return threadServ.getComments($stateParams.threadId);
           		}
           }
    });
